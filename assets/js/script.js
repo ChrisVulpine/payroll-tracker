@@ -1,12 +1,10 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-
 let employeesArray = []; 
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
 
   let addemployees = true;
 
@@ -18,7 +16,6 @@ const collectEmployees = function() {
   let lastName = window.prompt("Please enter the employee's last name.");
 
   let salary = window.prompt("Please enter the employee's salary.");
-
 
   // Employee Object //
   let employee = {
@@ -36,12 +33,9 @@ const collectEmployees = function() {
   else { 
     break;
   }
-
-
 }
 
-return employeesArray; //NOTE: return is what displays after a function has ended. 
-
+return employeesArray; //NOTE: return is what displays in the window after a function has ended. 
 
 }
 
@@ -50,21 +44,17 @@ const displayAverageSalary = function() {
 
   let average = (employeesArray.map(employee => employee.salary).reduce((total, num) => total + num)) / employeesArray.length 
 
-  console.log(`Average Salary: ${average} `)
+  console.log(`Average Employee Salary: $${average} `)
 
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+
   const randomEmployee = employeesArray[Math.floor(Math.random()*employeesArray.length)];
 
-  console.log(`Congrats to ${randomEmployee.firstName} ${randomEmployee.lastName}! You win our raffle!`);
+  console.log(`Congrats to ${randomEmployee.firstName} ${randomEmployee.lastName}! You have won our raffle!`);
 }
-
-
-
-
 
 
 /*
