@@ -6,7 +6,7 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 
   let addemployees = true;
-  let employees = []; 
+  let employeesArray = []; 
   let salary = [];
 
   while(addemployees) {
@@ -28,7 +28,7 @@ const collectEmployees = function() {
   };
 
 
-  employees.push(employee);
+  employeesArray.push(employee);
 
   if (window.confirm("Would you like to add another employee?")) {
   }
@@ -39,7 +39,7 @@ const collectEmployees = function() {
 
 }
 
-return employees; //NOTE: return is what displays after a function has ended. 
+return employeesArray; //NOTE: return is what displays after a function has ended. 
 
 
 }
@@ -47,6 +47,7 @@ return employees; //NOTE: return is what displays after a function has ended.
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  
 
 
 }
@@ -54,6 +55,8 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  const randomEmployee = employeesArray[Math.floor(Math.random()*employeesArray.length)];
+  console.log(`Congrats to ${randomEmployee}! You win our raffle!`);
 }
 
 

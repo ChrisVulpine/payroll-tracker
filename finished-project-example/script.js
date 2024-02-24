@@ -50,7 +50,7 @@ const displayAverageSalary = function(employeesArray) {
 
   // Calculate the average salary
   const averageSalary = totalSalary / numEmployees;
-  console.log(`The average employee salary between our ${numEmployees} employee(s) is $${averageSalary.toFixed(2)}`)
+  console.log(`The average employee salary between our ${numEmployees} employee(s) is $${averageSalary}`)
 }
 
 // Select a random employee
