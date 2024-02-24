@@ -1,13 +1,14 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+
+let employeesArray = []; 
+
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 
   let addemployees = true;
-  let employeesArray = []; 
-  let salary = [];
 
   while(addemployees) {
 
@@ -45,10 +46,11 @@ return employeesArray; //NOTE: return is what displays after a function has ende
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
-  
+const displayAverageSalary = function() {
 
+  let average = (employeesArray.map(employee => employee.salary).reduce((total, num) => total + num)) / employeesArray.length 
+
+  console.log(`Average Salary: ${average} `)
 
 }
 
@@ -56,7 +58,8 @@ const displayAverageSalary = function(employeesArray) {
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   const randomEmployee = employeesArray[Math.floor(Math.random()*employeesArray.length)];
-  console.log(`Congrats to ${randomEmployee}! You win our raffle!`);
+
+  console.log(`Congrats to ${randomEmployee.firstName} ${randomEmployee.lastName}! You win our raffle!`);
 }
 
 
@@ -78,7 +81,7 @@ const displayEmployees = function(employeesArray) {
   // Clear the employee table
   employeeTable.innerHTML = '';
 
-  // Loop through the employee data and create a row for each employee
+  // Loop through the employee data and create a row for each employee 
   for (let i = 0; i < employeesArray.length; i++) {
     const currentEmployee = employeesArray[i];
 
